@@ -1,0 +1,86 @@
+#therm {
+  position: fixed;
+  top: 40px;
+  right: 225px;
+  width: 29px;
+  height: 50px;
+  background-image: url('./weather_imgs/thermometer.png');
+  background-size: 49px;
+  background-position-x: -10px;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+#hotness {
+  position: absolute;
+  top: 3px;
+  left: 12px;
+  width: 5px;
+  height: 27px;
+  background-color: #ff3502;
+  border-radius: 2px 2px 0 0;
+}
+#hotness_white {
+  content: '\A';
+  position: absolute;
+  background: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  height: 50%;
+  border-radius: 2px 2px 0 0;
+  transition: height 1.5s;
+}
+#weather {
+  position: fixed;
+  top: 10px;
+  right: 16px;
+  width: 200px;
+  z-index: -2;
+}
+#weather img {
+  width: 100%;
+  opacity: 0.7;
+}
+#ctemp {
+top: 28px;
+  left: -2px;
+  position: absolute;
+  font-size: 8px;
+  color: white;
+}
+@media only screen and (max-width: 1232px) {
+  #weather {
+     position: absolute;
+      top: 17px;
+      right: 17px;
+  }
+  #therm {
+      position: absolute;
+  }
+}
+@media only screen and (max-width: 644px) {
+  #weather {
+      width: 50px;
+  }
+  #therm {
+      top: 63px;
+      right: 22px;
+      background-size: 35px;
+      background-position-x: 0px;
+  }
+  #hotness {
+      left: 16px;
+      width: 3px;
+      height: 18px;
+  }
+  #hotness_white {
+      width: 3px;
+  }
+  #ctemp {
+    top: 18px;
+    left: -2px;
+    font-size: 6px;
+}
+}
+

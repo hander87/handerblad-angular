@@ -2,10 +2,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { AnalogclockComponent } from './plugins/analogclock/analogclock.component';
+import { WeatherComponent } from './plugins/weather/weather.component';
+import { BackgroundCanvasComponent } from './plugins/background-canvas/background-canvas.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { IntroComponent } from './layout/intro/intro.component';
+import { WorkComponent } from './layout/work/work.component';
+import { ExperienceComponent } from './layout/experience/experience.component';
+import { CoursesComponent } from './layout/courses/courses.component';
+import { SideprojectsComponent } from './layout/sideprojects/sideprojects.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AnalogclockComponent,
+    WeatherComponent,
+    BackgroundCanvasComponent,
+    HeaderComponent,
+    IntroComponent,
+    WorkComponent,
+    ExperienceComponent,
+    CoursesComponent,
+    SideprojectsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule
