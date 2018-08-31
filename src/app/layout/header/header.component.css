@@ -63,6 +63,8 @@
 #profile_img {
   width: 100px;
   box-shadow: none !important;
+  border-radius: 50px;
+  border: 1px solid #717273;
 }
 
 #small_img,
