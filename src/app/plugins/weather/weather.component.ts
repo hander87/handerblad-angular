@@ -10,12 +10,16 @@ import { Http, Response } from '@angular/http';
 })
 export class WeatherComponent implements OnInit, OnDestroy {
   weatherResponse: Subscription;
-  temp: Number;
+  temp: any;
   cond: String;
   code: String;
   window_img: String;
   weatherImage: String;
+  weatherTemp: any;
+  weatherFar: any;
   theWeather: String[] = [];
+  theWeatherTemp: Number[] = [];
+  theWeatherFar: Number[] = [];
   date = new Date();
   hour = this.date.getHours();
 
@@ -83,9 +87,21 @@ export class WeatherComponent implements OnInit, OnDestroy {
           this.window_img = 'window_cloudy';
       }
 
-      this.theWeather.push(this.window_img);
-      console.log(this.theWeather[0]);
+      let ctemp = (this.temp - 32) * .5556;
+      ctemp = Math.floor(ctemp);
+      console.log('Temp in C: ' + ctemp);
 
+      if ( this.temp > 86 ) {
+        this.temp = 100;
+      }
+      if ( this.temp < 5 ) {
+          this.temp = 1;
+      }
+      this.temp = 100 - this.temp;
+
+      this.theWeather.push(this.window_img);
+      this.theWeatherFar.push(this.temp);
+      this.theWeatherTemp.push(ctemp);
       this.getTheWeather();
 
     });
@@ -94,11 +110,16 @@ export class WeatherComponent implements OnInit, OnDestroy {
 
   getTheWeather() {
     this.weatherImage = './assets/images/weather_imgs/' + this.theWeather[0] + '.jpg';
+    this.weatherFar = this.theWeatherFar[0];
+  }
+
+  thermometerHeightStyle() {
+    this.weatherTemp = this.theWeatherTemp[0];
+    return { height: this.weatherTemp + 'px' };
   }
 
   ngOnDestroy() {
     this.weatherResponse.unsubscribe();
-
   }
 
 }

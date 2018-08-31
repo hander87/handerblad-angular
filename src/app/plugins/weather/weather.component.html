@@ -3,6 +3,8 @@
 </div>
   <div id="therm">
     <div id="hotness">
-      <div id="hotness_white"></div>
+      <div id="hotness_white" [ngStyle]="thermometerHeightStyle()">
+          <span id="ctemp">{{ weatherTemp }}</span>
+      </div>
     </div>
   </div>
