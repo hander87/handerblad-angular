@@ -1,10 +1,18 @@
 <div id="weather">
-  <img *ngIf="weatherImage" [src]="weatherImage">
+  <img
+    *ngIf="weatherImage"
+    [src]="weatherImage">
 </div>
-  <div id="therm">
+  <div
+    id="therm"
+    *ngIf="weatherImage">
     <div id="hotness">
-      <div id="hotness_white" [ngStyle]="thermometerHeightStyle()">
-          <span id="ctemp">{{ weatherTemp }}</span>
+      <div
+        id="hotness_white"
+        [ngStyle]="thermometerHeightStyle()">
+          <span id="ctemp">
+            {{ weatherTemp }}
+          </span>
       </div>
     </div>
   </div>

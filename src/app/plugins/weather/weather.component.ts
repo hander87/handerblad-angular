@@ -22,6 +22,7 @@ export class WeatherComponent implements OnInit, OnDestroy {
   theWeatherFar: Number[] = [];
   date = new Date();
   hour = this.date.getHours();
+  checked = false;
 
   constructor(private http: Http) {}
 
@@ -114,8 +115,10 @@ export class WeatherComponent implements OnInit, OnDestroy {
   }
 
   thermometerHeightStyle() {
-    this.weatherTemp = this.theWeatherTemp[0];
-    return { height: this.weatherTemp + 'px' };
+      this.weatherTemp = this.theWeatherTemp[0];
+      this.checked = true;
+      return { height: this.weatherTemp + 'px' };
+
   }
 
   ngOnDestroy() {

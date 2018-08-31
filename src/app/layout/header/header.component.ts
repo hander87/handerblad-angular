@@ -44,7 +44,6 @@ export class HeaderComponent implements OnInit {
     this.activeState = this.activeState === 'active' ? 'inactive' : 'active';
     this.inactiveState = this.inactiveState === 'active' ? 'inactive' : 'active';
     this.width = this.width === 'small' ? 'wide' : 'small';
-    console.log(this.activeState);
   }
 
   ngOnInit() {

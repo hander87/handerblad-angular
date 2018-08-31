@@ -10,6 +10,10 @@
   background-repeat: no-repeat;
   z-index: -2;
 }
+.therm_error {
+  background-image: none !important;
+  background: none !important;
+}
 #hotness {
   position: absolute;
   top: 3px;
