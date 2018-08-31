@@ -11,6 +11,8 @@ import { ExperienceComponent } from './layout/experience/experience.component';
 import { CoursesComponent } from './layout/courses/courses.component';
 import { SideprojectsComponent } from './layout/sideprojects/sideprojects.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

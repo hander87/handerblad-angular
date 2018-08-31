@@ -1,13 +1,27 @@
 <div class="row" id="logo_cont">
-  <div id="logo">
-    <span class="small" id="small_title">Web Developer</span>
-    <span class="small" id="small_img"><img id="profile_img" src="../../assets/images/i.jpg" /></span>
-    <span class="big" id="big_age">{{ age }}></span>
-    <span class="big" id="big_h">Ha</span>
+  <div (click)="haAnimate()" id="logo" [@haWidthState]="width">
+    <span *ngIf="activeState == 'active'" class="small" [@haState]="activeState" id="small_title">
+      Web Developer
+    </span>
+    <span *ngIf="activeState == 'active'" class="small" [@haState]="activeState" id="small_img">
+      <img id="profile_img" src="../../assets/images/i.jpg" />
+    </span>
+    <span *ngIf="activeState == 'inactive'" class="big" [@haState]="inactiveState" id="big_age">
+      {{ age }}
+    </span>
+    <span *ngIf="activeState == 'inactive'" class="big" [@haState]="inactiveState" id="big_h">
+      Ha
+    </span>
     <div id="left">
-      <span class="small" id="small_hannes">Hannes Anderblad</span>
-      <span class="small" id="small_age">1987</span>
-      <span class="small" id="small_sthlm">Stockholm</span>
+      <span *ngIf="activeState == 'active'" class="small" [@haState]="activeState" id="small_hannes">
+        Hannes Anderblad
+      </span>
+      <span *ngIf="activeState == 'active'" class="small" [@haState]="activeState" id="small_age">
+        1987
+      </span>
+      <span *ngIf="activeState == 'active'" class="small" [@haState]="activeState" id="small_sthlm">
+        Stockholm
+      </span>
     </div>
   </div>
 </div>
