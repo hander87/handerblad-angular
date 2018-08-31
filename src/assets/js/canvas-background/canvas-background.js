@@ -1,8 +1,6 @@
-// Sätt in: <canvas id="canvas1"></canvas>
-
+// Lyssnar efter: <canvas id="canvas1"></canvas>
 var canvas = document.querySelector('#canvas1');
 
-// c står för context
 var c = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
@@ -13,35 +11,22 @@ var mouse = {
 	y: undefined
 }
 
-var maxRadius = 40;
-// var minRadius = 4;
+var maxRadius = 25;
 
-// Profile 1
+// Color Profile
 var colorArray = [
-
 	'rgba(252, 247, 255, 0.85)',
 	'rgba(209, 218, 232, 0.85)',
 	'rgba(247, 255, 251, 0.85)',
 	'rgba(227, 232, 209, 0.85)',
 	'rgba(255, 246, 229, 0.85)'
-
-/*
-	'#FCF7FF',
-	'#D1DAE8',
-	'#F7FFFB',
-	'#E3E8D1',
-	'#FFF6E5'
-*/
 ];
-
-console.log(Math.random() * colorArray.length);
 
 window.addEventListener('mousemove',
 	function(event){
 	mouse.x = event.x;
 	mouse.y = event.y;
 } );
-
 
 window.addEventListener('resize',
 	function(){
@@ -79,31 +64,35 @@ function Circle(x, y, dx, dy, radius) {
 		this.x += this.dx;
 		this.y += this.dy;
 
-		// interactivity
+		// Mouse Circle Size
 		if (mouse.x - this.x < 50 && mouse.x - this.x > -50 &&
 			mouse.y - this.y < 50 && mouse.y - this.y > -50) {
 
 			if (this.radius < maxRadius) {
-				this.radius += 1;
+        // Circle Size Speed
+				this.radius += 0.5;
 			}
 		} else if (this.radius > this.minRadius ) {
 			this.radius -=1;
 		}
 		this.draw();
 	}
-}
+} // Circle
 
 var circleArray = [];
 
 function init() {
-	circleArray = [];
+  circleArray = [];
+
+  // Nr of Circles
 	for (var i = 0; i < 500; i++) {
 
+    // Paths
 		var radius = Math.random() * 3 + 1;
-		var x = Math.random() * (innerWidth - radius * 2) + radius;
-		var y = Math.random() * (innerHeight - radius * 2) + radius;
-		var dx  = (Math.random() - 0.5) * 2;
-		var dy = (Math.random() - 0.5) * 2;
+		var x = Math.random() * (innerWidth - radius * 1.1) + radius;
+		var y = Math.random() * (innerHeight - radius * 1.1) + radius;
+		var dx  = (Math.random() - 0.5) * 1.1;
+		var dy = (Math.random() - 0.5) * 1.1;
 
 		circleArray.push(new Circle(x, y, dx, dy, radius));
 
@@ -111,11 +100,11 @@ function init() {
 
 }
 
+// Animate function
 function animate() {
 	requestAnimationFrame(animate);
 
 	c.clearRect(0, 0, innerWidth, innerHeight);
-
 
 	for (var i = 0; i < circleArray.length; i++) {
 		circleArray[i].update();
@@ -123,7 +112,4 @@ function animate() {
 
 }
 animate();
-
-console.log(Math.floor(Math.random() * 4 + 1))
-
 init ();
