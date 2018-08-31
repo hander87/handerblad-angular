@@ -30,7 +30,10 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class HeaderComponent implements OnInit {
-  age = 31;
+  date = new Date;
+  year = this.date.getFullYear();
+  myAge = this.year - 1987;
+  age = this.myAge;
   activeState = 'inactive';
   inactiveState = 'active';
   width = 'small';

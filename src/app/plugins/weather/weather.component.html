@@ -1,5 +1,5 @@
 <div id="weather">
-  <img [src]="weatherImage">
+  <img *ngIf="weatherImage" [src]="weatherImage">
 </div>
   <div id="therm">
     <div id="hotness">
