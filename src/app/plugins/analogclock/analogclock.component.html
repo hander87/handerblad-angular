@@ -7,15 +7,15 @@
         />
         <circle class="mid-circle" cx="300" cy="300" r="16.2" />
       </g>
-      <g id="hour">
+      <g id="hour" [ngStyle]="returnHours()">
         <path class="hour-arm" d="M300.5 298V142" />
         <circle class="sizing-box" cx="300" cy="300" r="253.9" />
       </g>
-      <g id="minute">
+      <g id="minute" [ngStyle]="returnMinutes()">
         <path class="minute-arm" d="M300.5 298V67" />
         <circle class="sizing-box" cx="300" cy="300" r="253.9" />
       </g>
-      <g id="second" [ngStyle]="{'transform': timeSec }">
+      <g id="second" [ngStyle]="returnSeconds()">
         <path class="second-arm" d="M300.5 350V55" />
         <circle class="sizing-box" cx="300" cy="300" r="253.9" />
       </g>
