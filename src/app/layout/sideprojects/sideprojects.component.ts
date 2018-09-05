@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ApisearchComponent } from '../../pages/apisearch/apisearch.component';
+
 
 @Component({
   selector: 'app-sideprojects',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideprojectsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ApisearchComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   ngOnInit() {
   }

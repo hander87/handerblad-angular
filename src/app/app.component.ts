@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,5 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     console.log('Hej kompis, ut ur min konsol! Enbart admins tillåtna, tack');
   }
+
 }

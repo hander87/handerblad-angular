@@ -8,7 +8,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AnalogclockComponent } from './plugins/analogclock/analogclock.component';
@@ -21,11 +20,6 @@ import { CoursesComponent } from './layout/courses/courses.component';
 import { SideprojectsComponent } from './layout/sideprojects/sideprojects.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ApisearchComponent } from './pages/apisearch/apisearch.component';
-
-const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: 'apisearch', component: ApisearchComponent }
-];
 
 @NgModule({
   declarations: [
@@ -51,7 +45,6 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
-    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
