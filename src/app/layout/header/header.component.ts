@@ -14,7 +14,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       state('active',   style({
         display: 'block',
       })),
-      transition('inactive <=> active', animate('1000ms 1000ms'))
+      transition('inactive <=> active', animate('2200ms ease-in'))
     ]),
     trigger('haWidthState', [
       state('small', style({
@@ -32,12 +32,10 @@ export class HeaderComponent implements OnInit {
   date = new Date;
   year = this.date.getFullYear();
   myAge = this.year - 1987;
-  age = this.myAge;
   activeState = 'inactive';
   inactiveState = 'active';
   width = 'small';
-
-  constructor() { }
+  age = this.myAge;
 
   haAnimate() {
     this.activeState = this.activeState === 'active' ? 'inactive' : 'active';
