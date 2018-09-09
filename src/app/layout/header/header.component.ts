@@ -9,20 +9,19 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
     trigger('haState', [
       state('inactive', style({
-        display: 'none'
+        display: 'none',
       })),
       state('active',   style({
-        display: 'block'
+        display: 'block',
       })),
-      transition('inactive => active', animate('100ms ease-in')),
-      transition('active => inactive', animate('100ms ease-out'))
+      transition('inactive <=> active', animate('1000ms 1000ms'))
     ]),
     trigger('haWidthState', [
       state('small', style({
         width: '200px'
       })),
       state('wide',   style({
-        width: '340px'
+        width: '340px',
       })),
       transition('small => wide', animate('200ms ease-in')),
       transition('wide => small', animate('200ms ease-out'))
