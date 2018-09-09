@@ -11,7 +11,7 @@ a {
 }
 .example-card {
   max-width: 500px;
-  max-height: 174px;
+  max-height: 220px;
   margin: 1rem auto;
 }
 .imgReddit {
@@ -30,4 +30,14 @@ a {
   position: absolute;
   top: 0px;
   left: 5px;
+}
+.mat-dialog-container {
+  background-color: white !important;
+}
+.ng-star-inserted {
+  background-color: #ffffff;
+  transition: 0.5s
+}
+.ng-star-inserted:hover {
+  background-color: #fdf5ef;
 }

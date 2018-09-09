@@ -3,10 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatGridListModule} from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -20,6 +16,13 @@ import { CoursesComponent } from './layout/courses/courses.component';
 import { SideprojectsComponent } from './layout/sideprojects/sideprojects.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ApisearchComponent } from './pages/apisearch/apisearch.component';
+
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +48,13 @@ import { ApisearchComponent } from './pages/apisearch/apisearch.component';
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
+    MatDialogModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule
   ],
+  entryComponents: [ApisearchComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
