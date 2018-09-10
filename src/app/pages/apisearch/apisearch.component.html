@@ -1,0 +1,48 @@
+<h1>{{ title }}</h1>
+<mat-dialog-content class="mat-typography">
+  <mat-card>
+    <div class="inputstyle">
+    <mat-form-field style="width: 270px">
+      <input
+        style="font-size: 36px;"
+        matInput
+        type="text"
+        [(ngModel)]="searchString"
+        (ngModelChange)="inputChanged($event)"
+        placeholder="Type search word for reddit/r/aww ...">
+    </mat-form-field>
+    </div>
+  </mat-card>
+
+  <div *ngFor="let result of results$ | async">
+    <mat-card
+      *ngIf="result.data.thumbnail != 'default' && result.data.thumbnail != 'self'"
+      class="example-card">
+      <mat-card-content>
+        <mat-grid-list cols="2">
+          <mat-grid-tile>
+              <div class="text-inside-grid">
+                <a target="_blank" class="imgReddit" [href]="result.data.url">
+                  <img mat-card-image [src]="result.data.thumbnail" alt="">
+                </a>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="text-inside-grid">
+                <a
+                  target="_blank"
+                  class="textReddit"
+                  [href]="'https://www.reddit.com' + result.data.permalink">
+                  <h4>{{ result.data.title ? (result.data.title | slice:0:150)+'..':(result.data.title) }}</h4>
+                </a>
+              </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
