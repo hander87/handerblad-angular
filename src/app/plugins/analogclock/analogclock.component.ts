@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { PLATFORM_ID, Component, OnInit, OnDestroy, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-analogclock',
   templateUrl: './analogclock.component.html',
   styleUrls: ['./analogclock.component.css']
 })
-export class AnalogclockComponent implements OnInit {
+export class AnalogclockComponent implements OnInit, OnDestroy {
   pratKlocka = 0;
+  initClock = null;
 
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   runTheClock(timeType) {
     const date = new Date();
@@ -53,6 +55,16 @@ export class AnalogclockComponent implements OnInit {
   }
 
   ngOnInit() {
-    setInterval(this.runTheClock, 1000);
+    // isPlatformBrowser fix for NgUniversal
+    if (isPlatformBrowser(this.platformId)) {
+      setInterval(() => {
+        this.initClock = this.runTheClock;
+      }, 1000);
+    }
   }
+
+  ngOnDestroy() {
+    clearInterval(this.initClock);
+  }
+
 }
