@@ -39,7 +39,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     ApisearchComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'handerblad-angular' }),
     BrowserAnimationsModule,
     HttpModule,
     MatCardModule,
@@ -49,10 +49,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatInputModule,
     MatGridListModule,
     MatDialogModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule
   ],
   entryComponents: [ApisearchComponent],
   providers: [],
